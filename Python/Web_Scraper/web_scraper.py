@@ -1,4 +1,5 @@
 import scrapy
+from scrapy.crawler import CrawlerProcess
 
 class MySpider(scrapy.Spider):
 
@@ -12,13 +13,12 @@ class MySpider(scrapy.Spider):
 
         # Print the extracted data
         for item in data:
-            
+
             print(item)
 
 # Running the spider
 if __name__ == "__main__":
 
-    from scrapy.crawler import CrawlerProcess
     process = CrawlerProcess()
     process.crawl(MySpider)
     process.start()
